@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("test").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "test", true);
+  xhttp.send();
+}
+function cycle() {
+    loadDoc()
+    setInterval(loadDoc,2000);
+}
+function like() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("like").src =
+      this.responseText;
+    }
+  };
+  thumb = document.getElementById('like').src;
+  {#stat = thumb.split('/')[-1]#}
+  xhttp.open("GET", "like?soc=" + thumb, true);
+  xhttp.send();
+}
+</script>
+</head>
+<body>
+
+<div id="demo">
+<h1 id="test">The XMLHttpRequest Object</h1>
+<button type="button" onclick="cycle()">Change Content</button>
+</div>
+<button type="button" onclick="like()"><img id="like" src='/uploads/like.png'/></button>
+
+
+
+</body>
+</html>
