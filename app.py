@@ -26,7 +26,7 @@ def demo():
 
 @app.route('/uploads/<filename>')
 def uploads(filename):
-    data_file_directory = r'C:\Users\wuyan\Desktop\ajax\static'
+    data_file_directory = r'E:\ajax\static'
     return send_from_directory(data_file_directory, filename)
 
 
@@ -42,9 +42,9 @@ def like():
 
 
 if __name__ == '__main__':
-    config = dict(
-        debug=True,
-        host='0.0.0.0',
-        port=80,
-    )
-    app.run(**config)
+    # config = dict(
+    #     debug = True,
+    #     ,
+    #
+    # )
+    app.run(host='0.0.0.0')

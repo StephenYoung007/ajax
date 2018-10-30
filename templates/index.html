@@ -13,6 +13,7 @@ function loadDoc() {
   xhttp.open("GET", "test", true);
   xhttp.send();
 }
+<<<<<<< HEAD
 
 
 
@@ -29,6 +30,11 @@ function stop() {
         inner.html = "Stat";
         window.clearInterval(ti)
     }
+=======
+function cycle() {
+    loadDoc()
+    setInterval(loadDoc,5000);
+>>>>>>> 4e28bba1edccd6f53aa96f3179a7eaedc1d8461d
 }
 
 
