@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function stop() {
+            var a = document.getElementById("switch");
+            if(a.innerHTML == "start"){
+                a.innerHTML = "stop"
+            }
+            else {
+                a.innerHTML = "start"
+            }
+            console.log(a.innerHTML)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="stop()" id="switch">
+        Start
+    </button>
+</body>
+</html>

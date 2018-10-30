@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
+    <script type="text/javascript">
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -13,10 +13,41 @@ function loadDoc() {
   xhttp.open("GET", "test", true);
   xhttp.send();
 }
-function cycle() {
-    loadDoc()
-    setInterval(loadDoc,2000);
+
+
+
+<!--
+function stop() {
+    var inner = document.getElementById("switch");
+    ti = setInterval(loadDoc,2000);
+    if(inner.html == "start"){
+        inner.html = "stop";
+        ti();
+        console.log(inner.html)
+    }
+    else {
+        inner.html = "Stat";
+        window.clearInterval(ti)
+    }
 }
+
+
+-->
+function stop() {
+            var a = document.getElementById("switch");
+            if(a.innerHTML == "start"){
+                t = setInterval(loadDoc, 2000);
+                a.innerHTML = "stop";
+                console.log(a.innerHTML)
+            }
+            else if (a.innerHTML == "stop") {
+                a.innerHTML = "start";
+                window.clearInterval(t);
+                console.log(a.innerHTML)
+            }
+
+        }
+
 function like() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -36,7 +67,7 @@ function like() {
 
 <div id="demo">
 <h1 id="test">The XMLHttpRequest Object</h1>
-<button type="button" onclick="cycle()">Change Content</button>
+    <button type="button" onclick="stop()" id="switch">start</button>
 </div>
 <button type="button" onclick="like()"><img id="like" src='/uploads/like.png'/></button>
 
